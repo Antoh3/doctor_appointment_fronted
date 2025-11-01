@@ -9,6 +9,8 @@
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
 	"dependencies": {
+		"@fontsource/fira-code": "^5.2.7",
+		"@fontsource/inter": "^5.2.8",
 		"@fullcalendar/core": "^6.1.15",
 		"@fullcalendar/daygrid": "^6.1.15",
 		"@fullcalendar/interaction": "^6.1.15",
