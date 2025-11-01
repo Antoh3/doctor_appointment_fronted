@@ -10,8 +10,6 @@ import {
     Pagination,
     TableCell
 } from "@nextui-org/react";
-import Link from 'next/link'
-import { practitioners } from '../practitioners.js'
 import { useEffect, useState, useMemo, SetStateAction } from "react";
 import { useRouter } from 'next/navigation'
 import axios from "axios";

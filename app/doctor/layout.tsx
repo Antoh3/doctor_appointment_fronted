@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AppSidebar } from "@/components/DoctorSideBar";
 import { siteConfig } from "@/config/site";
-import createAxiosInstance from "../../context/axiosInstance";
+// import createAxiosInstance from "../../context/axiosInstance";
 // import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });

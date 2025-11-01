@@ -2,7 +2,6 @@ pipeline {
   agent any
 
   environment {
-        NODE_ENV = 'production'
         VERCEL_TOKEN = credentials('VERCEL_TOKEN')
     }
 
