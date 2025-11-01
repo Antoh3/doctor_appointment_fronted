@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fira-code";
 
 :root {
     --foreground-rgb: 0, 0, 0;
@@ -67,4 +69,16 @@ body {
     .text-12-semibold {
       @apply text-[12px] leading-[16px] font-semibold;
     }
+}
+
+
+
+
+:root {
+  --font-sans: "InterVariable", sans-serif;
+  --font-mono: "FiraCodeVariable", monospace;
+}
+
+body {
+  font-family: var(--font-sans);
 }

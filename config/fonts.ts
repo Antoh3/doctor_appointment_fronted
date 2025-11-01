@@ -10,8 +10,9 @@
 //   subsets: ["latin"],
 //   variable: "--font-mono",
 // });
-import "@fontsource/inter/variable.css";
-import "@fontsource/fira-code/variable.css";
+
+import "@fontsource-variable/inter";
+import "@fontsource-variable/fira-code";
 
 
 export const fontSans = {
@@ -23,3 +24,4 @@ export const fontMono = {
   variable: "--font-mono",
   className: "font-mono",
 };
+
