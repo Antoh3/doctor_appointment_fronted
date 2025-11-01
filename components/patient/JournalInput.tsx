@@ -7,7 +7,7 @@ import { FaEnvelope, FaLock } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios, { AxiosError } from "axios";
-import { LuLoader2 } from "react-icons/lu";
+import { LuLoader } from "react-icons/lu";
 import { message } from "antd";
 import { journalForm, journalSchema } from "@/lib/validators/patient";
 import { createJournal, updateJournal } from "@/app/doctor/journal/journal";
@@ -26,7 +26,14 @@ export default function JournalInput() {
   });
 
   const isEditing: boolean = useIsEditing((state) => state.isEditing);
-  const editedJournal: object = useEditedJournal((state) => state.editedJournal)
+
+  type EditedJournalType = {
+    id?: string;
+    content?: string;
+    [key: string]: any;
+  };
+
+  const editedJournal: EditedJournalType = useEditedJournal((state) => state.editedJournal)
   const setIsEditing: (passedBoolean: boolean) => void = useIsEditing((state) => state.setIsEditing);
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
@@ -139,7 +146,7 @@ export default function JournalInput() {
             disabled={isLoading}
           >
             Update
-            {isLoading && <LuLoader2 className="h-4 w-4 animate-spin" />}
+            {isLoading && <LuLoader className="h-4 w-4 animate-spin" />}
           </Button>
         </div>
         : <Button
@@ -148,7 +155,7 @@ export default function JournalInput() {
           disabled={isLoading}
         >
           Save
-          {isLoading && <LuLoader2 className="h-4 w-4 animate-spin" />}
+          {isLoading && <LuLoader className="h-4 w-4 animate-spin" />}
         </Button>}
     </form>
   );

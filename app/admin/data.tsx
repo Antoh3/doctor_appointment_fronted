@@ -78,7 +78,7 @@ const statusColorMap = {
   active: "success",
   paused: "danger",
   vacation: "warning",
-};
+} as const;
 
 export default function PractitionerRequest() {
   const renderCell = React.useCallback((user:any, columnKey: string | number) => {
@@ -103,8 +103,9 @@ export default function PractitionerRequest() {
           </div>
         );
       case "status":
+        const statusKey = cellValue as keyof typeof statusColorMap;
         return (
-          <Chip className="capitalize" color={statusColorMap[cellValue]} size="sm" variant="flat">
+          <Chip className="capitalize" color={statusColorMap[statusKey]} size="sm" variant="flat">
             {cellValue}
           </Chip>
         );

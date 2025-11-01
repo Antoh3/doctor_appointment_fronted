@@ -40,8 +40,13 @@ const AppNav = ({ items }: PatientNavProps) => {
             <div key={index} className="mt-4">
               <h3 className="pl-3 mb-2 text-medium font-semibold text-gray-500">{item.title}</h3>
               <div className="">
-                {item.items.map((subItem:any, subIndex:any) => {
-                  const SubIcon = Icons[subItem.icon || "arrowRight"];
+                {item.items.map((subItem: any, subIndex: any) => {
+                  const SubIcon = Icons[
+                    (subItem.icon as keyof typeof Icons) in Icons
+                      ? (subItem.icon as keyof typeof Icons)
+                      : "arrowRight"
+                  ];
+
                   return (
                     subItem.href && (
                       <Link key={subIndex} href={subItem.disabled ? "/" : subItem.href}>
@@ -64,7 +69,8 @@ const AppNav = ({ items }: PatientNavProps) => {
           );
         }
 
-        const Icon = Icons[item.icon || "arrowRight"];
+        const iconKey = (item.icon as keyof typeof Icons) || "arrowRight";
+        const Icon = Icons[iconKey];
         return (
           item.href && (
             <Link key={index} href={item.disabled ? "/" : item.href}>

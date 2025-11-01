@@ -5,7 +5,6 @@ import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios, { AxiosError } from "axios";
-import { LuLoader2 } from "react-icons/lu";
 import { message } from "antd";
 import { triageForm, triageSchema } from "@/lib/validators/triage";
 
