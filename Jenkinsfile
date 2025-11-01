@@ -1,6 +1,12 @@
 pipeline {
   agent any
 
+  environment {
+        NODE_ENV = 'production'
+        VERCEL_TOKEN = credentials('VERCEL_TOKEN')
+    }
+
+
   stages {
     stage('Checkout') {
       steps {
@@ -24,6 +30,13 @@ pipeline {
       steps {
         archiveArtifacts artifacts: '.next/**', fingerprint: true
       }
+    }
+
+    stage('Deploy to Vercel') {
+        steps {
+            echo 'Deploying to Vercel...'
+            sh 'vercel deploy --prod --token=$VERCEL_TOKEN --yes'
+        }
     }
   }
 

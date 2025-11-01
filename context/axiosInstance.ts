@@ -1,6 +1,7 @@
 import { useAuth } from "./AuthContext";
 import axios from "axios";
-const BASE_URL = "http://localhost:5001";
+const BASE_URL = "https://ambulanceportal.up.railway.app";
+// const BASE_URL = "http://localhost:5001";
 
 const createAxiosInstance = () => {
     const { auth, setAuth } = useAuth();
